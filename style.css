@@ -3,7 +3,8 @@
 
 body {
     margin: 0px;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(250, 249, 249);
+    font-family: 'Canela Text Trial', sans-serif;
 }
 
 .main-container {
@@ -40,9 +41,25 @@ button {
     font-size: 20px;
 }
 
+.header2 {
+    padding: 3rem;
+    margin-left: 6.5rem;
+    color: #303030;
+}
+
+.header2>p {
+    font-size: 18px;
+    color: #4a4a4a;
+}
+
+.header2 p,
+.header2 i {
+    display: inline;
+}
+
 .vPheading {
     margin-left: 10rem;
-    margin-right: 5%;
+    margin-right: 4%;
 }
 
 .vPheading>h1 {
@@ -58,15 +75,33 @@ button {
     display: grid;
     grid-template-columns: repeat(2, 600px);
     margin-left: 10rem;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
 }
 
 .pImage>img {
     height: 30rem;
+    margin-left: 8rem;
+}
+
+.pTitle {
+    font-size: 20px;
+}
+
+.provostContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    margin-left: 10rem;
+    padding-bottom: 8rem;
+}
+
+.proImage>img {
+    height: 30rem;
 }
 
 .provostTitle {
-    margin-left: 5rem;
+    margin-left: 8rem;
+    font-size: 20px;
 }
 
 .heading {
@@ -82,6 +117,80 @@ button {
     display: flex;
     margin-left: 10rem;
     gap: 15rem;
+}
+
+.dean {
+    display: grid;
+    grid-template-columns: repeat(3, 430px);
+    gap: 2rem;
+    margin-left: 10rem;
+}
+
+.dean-container {
+    width: 430px;
+    height: 550px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.dean-container img {
+    height: 300px;
+    width: 430px;
+    margin-bottom: 50px;
+}
+
+.name {
+    margin-left: 2rem;
+}
+
+.name>h2 {
+    margin: 0;
+    position: absolute;
+    color: black;
+}
+
+.name>h2::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.name>h2:hover::before {
+    width: 100%;
+}
+
+.name>p {
+    color: #303030;
+    position: absolute;
+    margin-left: 2rem;
+    bottom: 7rem;
+    left: 0;
+}
+
+.dean-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.dean-container {
+    animation: fadeIn 0.5s ease;
 }
 
 .footer {
@@ -160,79 +269,119 @@ h3 {
     margin: 0 5px;
 }
 
+@media (max-width: 600px) {
+    .main-container {
+        background-size: cover;
+        background-position: 100%;
+        padding-bottom: 5rem;
+    }
 
-@media screen and (max-width: 576px) {
+    .header2 {
+        padding: 1rem;
+        margin-left: 2.5rem;
+        color: #303030;
+    }
+
+    .header2>p {
+        font-size: 18px;
+        color: #4a4a4a;
+    }
+
     .navbar {
         flex-direction: column;
-        align-items: center;
     }
 
     .menu {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
         font-size: 20px;
     }
 
     .logo {
-        margin: 1rem auto;
+        height: 80px;
+        width: 200px;
+        margin: 1rem;
     }
 
-    .presidentContainer {
-        grid-template-columns: 1fr;
-        margin-left: 2rem;
-        margin-right: 2rem;
+    .header2 {
+        padding: 2rem;
+        margin-left: 3rem;
     }
 
     .heading {
         font-size: 3rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
-
-    .pImage>img {
-        height: 15rem;
+        font-weight: 400;
+        font-style: normal;
+        margin-left: 3rem;
     }
 
     .vPheading {
         margin-left: 2rem;
-        margin-right: 5%;
     }
 
+    .vPheading>h1 {
+        font-size: 2.5rem;
+    }
+
+    .presidentContainer,
+    .provostContainer,
     .vicePresidents {
-        flex-direction: column;
+        display: block;
         margin-left: 2rem;
-        margin-right: 2rem;
+    }
+
+    .dean {
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
         gap: 2rem;
+        margin-left: 35px;
     }
 
-
-    .section {
-        grid-template-columns: 1fr;
-        margin-left: 2rem;
-        margin-right: 2rem;
+    .dean-container {
+        width: 20rem;
+        height: 30rem;
     }
 
-    .footer {
-        padding: 2rem;
+    .dean-container img {
+        height: rem;
+        width: 20rem;
+        margin-bottom: 50px;
+    }
+
+    .pImage>img,
+    .proImage>img {
+        height: 15rem;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .provostTitle,
+    .pTitle,
+    .name {
+        margin-left: 0;
         text-align: center;
     }
 
-    .footer-image {
-        margin-top: 1rem;
+    .footer {
+        font-size: 12px;
+    }
+
+    .section {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 1rem;
+        padding-top: 1rem;
     }
 
     .bottomList {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
+        font-size: 12px;
     }
-
-    .bottomList p {
-        margin-top: 1rem;
+    .name {
+        margin-left: 1rem;
+        /* position: relative; */
     }
-
-    .bottomList ul {
-        margin-top: 1rem;
+    
+    .name>p {
+        margin-left: .7rem;
+        bottom: 2rem;
+        left: 0;
     }
 }
